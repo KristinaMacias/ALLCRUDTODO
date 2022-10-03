@@ -26,26 +26,26 @@ const Todo = ({ text, todo, todos, setTodos }) => {
 
     //onclick to start editing
     const editHandler = () => {
-        setIsEditing(true); //set isEditing to true to start editing
+        setIsEditing(true);
     }
 
     //onchange to edit text
     const editChangeHandler = (e) => {
-        setEditingText(e.target.value); //setting the value of the input to the state
+        setEditingText(e.target.value);
     }
 
     //onsubmit to save edit text
-    const saveEditHandler = (e) => { //e is event
-        e.preventDefault(); //prevents page from refreshing
-        setTodos(todos.map(item => { //map through todos to find the one to edit
-            if (item.id === todo.id) { //comparing the one clicked to the state (todo.id is the id of the one clicked)
+    const saveEditHandler = (e) => {
+        e.preventDefault();
+        setTodos(todos.map(item => {
+            if (item.id === todo.id) {
                 return {
-                    ...item, text: editingText //item is the one clicked, text is the property, editingText is the value of the state (the input)
+                    ...item, text: editingText
                 }
             }
-            return item; //returning item if did not match
+            return item;
         }))
-        setIsEditing(false); //set isEditing to false to stop editing
+        setIsEditing(false);
     }
 
     return (

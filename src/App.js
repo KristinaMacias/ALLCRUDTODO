@@ -12,7 +12,7 @@ function App() {
   const [inputText, setInputText] = useState(""); //state expecting string
   const [todos, setTodos] = useState([]); //state expecting array of objects
   const [currentTodo, setCurrentTodo] = useState({});
-  const [isEditing, setIsEditing] = useState(false);
+
 
   return (
     <div className="App">
@@ -31,8 +31,7 @@ function App() {
       <TodoList
         todos={todos}
         setTodos={setTodos}
-        isEditing={isEditing}
-        setIsEditing={setIsEditing}
+
       />
     </div>
   );
